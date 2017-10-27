@@ -1,4 +1,4 @@
-class TileDB < Formula
+class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.io"
     url "https://github.com/TileDB-Inc/TileDB/archive/1.0.0.tar.gz"
