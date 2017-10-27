@@ -20,7 +20,7 @@ class Blosc < Formula
 		    "-DPREFER_EXTERNAL_LZ4=ON",
 		    "-DPREFER_EXTERNAL_SNAPPY=ON",
 		    "-DPREFER_EXTERNAL_ZLIB=ON",
-		    "-PREFER_EXTERNAL_ZSTD=ON",
+		    "-DPREFER_EXTERNAL_ZSTD=ON",
 		    *std_cmake_args
 	    system "make install"
 	end
