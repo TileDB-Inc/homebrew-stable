@@ -10,10 +10,9 @@ class Tiledb < Formula
     depends_on "lz4"
     depends_on "bzip2"
     depends_on "zstd"
+    depends_on "blosc"
 
     def install
-	# Build and install Blosc
-	# TODO:
 	# Build and install TileDB
 	mkdir "build"
 	cd "build" do
