@@ -29,8 +29,7 @@ class Tiledb < Formula
 	        int major = 0;
 		int minor = 0;
 		int patch = 0;
-		int rc = tiledb_version(&major,&minor,&patch);
-		assert(rc == TILEDB_OK);
+		tiledb_version(&major,&minor,&patch);
 		return 0;
 	    }
 	EOS
