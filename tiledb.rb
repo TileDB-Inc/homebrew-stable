@@ -23,7 +23,7 @@ class Tiledb < Formula
 
     test do
         (testpath/"test.cpp").write <<~EOS
-            #include "tiledb.h
+            #include "tiledb.h"
 	    #include "assert.h"
 	    int main() {
 	        int major = 0;
@@ -34,7 +34,7 @@ class Tiledb < Formula
 		return 0;
 	    }
 	EOS
-	system ENV.cc "test.cpp", "-L#{lib}", "-ltiledb", "-o", "test"
+	system ENV.cc, "test.cpp", "-L#{lib}", "-ltiledb", "-o", "test"
 	system "./test"
     end
 end
