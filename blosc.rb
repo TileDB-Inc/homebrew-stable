@@ -21,7 +21,10 @@ class Blosc < Formula
 		    "-DPREFER_EXTERNAL_SNAPPY=ON",
 		    "-DPREFER_EXTERNAL_ZLIB=ON",
 		    "-DPREFER_EXTERNAL_ZSTD=ON",
-		    *std_cmake_args
+		    "-DCMAKE_BUILD_TYPE=Release",
+		    "-DCMAKE_FIND_FRAMEWORK=LAST",
+		    "-DCMAKE_VERBOSE_MAKEFILE=ON",
+		    "-DCMAKE_INSTALL_PREFIX=#{prefix}"
 	    system "make install"
 	end
     end
