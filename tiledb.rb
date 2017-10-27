@@ -20,4 +20,21 @@ class Tiledb < Formula
 	    system "make install"
 	end
     end
+
+    test do
+        (testpath/"test.cpp").write <<~EOS
+            #include "tiledb.h
+	    #include "assert.h"
+	    int main() {
+	        int major = 0;
+		int minor = 0;
+		int patch = 0;
+		int rc = tiledb_version(&major,&minor,&patch);
+		assert(rc == TILEDB_OK);
+		return 0;
+	    }
+	EOS
+	system ENV.cc "test.cpp", "-L#{lib}", "-ltiledb", "-o", "test"
+	system "./test"
+    end
 end
