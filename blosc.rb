@@ -30,7 +30,7 @@ class Blosc < Formula
     end
 
     test do
-        (testpath/"test.cpp").write <<~EOS
+        (testpath/"test_blosc.cpp").write <<~EOS
 	    #include "blosc.h"
 	    int main() {
 	        blosc_init();
@@ -38,7 +38,7 @@ class Blosc < Formula
 		return 0;
 	    }
 	EOS
-	system ENV.cc, "test.cpp", "-L#{lib}", "-lblosc", "-o", "test"
+	system ENV.cc, "test_blosc.cpp", "-L#{lib}", "-lblosc", "-o", "test"
 	system "./test"
     end
 end
