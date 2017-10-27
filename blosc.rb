@@ -28,4 +28,17 @@ class Blosc < Formula
 	    system "make install"
 	end
     end
+
+    test do
+        (testpath/"test.cpp").write <<~EOS
+	    #include "blosc.h"
+	    int main() {
+	        blosc_init();
+		blosc_destroy();
+		return 0;
+	    }
+	EOS
+	system ENV.cc, "test.cpp", "-L#{lib}", "-lblosc", "-o", "test"
+	system "./test"
+    end
 end
