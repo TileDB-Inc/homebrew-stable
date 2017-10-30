@@ -8,6 +8,12 @@ Official [Homebrew](https://brew.sh/) packages for TileDB.
 brew install tiledb-inc/stable/tiledb
 ```
 
+Install the lastest development version of TileDB
+
+```sh
+brew install --HEAD tiledb-inc/stable/tiledb
+```
+
 ## Upgrade TileDB (to a new version)
 
 ```sh
