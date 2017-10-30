@@ -14,6 +14,12 @@ Install the lastest development version of TileDB
 brew install --HEAD tiledb-inc/stable/tiledb
 ```
 
+To test that the install worked correctly:
+
+```sh
+brew test tiledb
+```
+
 ## Upgrade TileDB (to a new version)
 
 ```sh
