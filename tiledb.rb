@@ -5,7 +5,7 @@ class Tiledb < Formula
     sha256 "9c1b8ee9edeed28a43c445ca861470d309b17d73e2e1a70c57424bc188bb2b33"
     version "1.1.0"
 	
-    head "https://github.com/TileDB-Inc/TileDB", :branch => "dev"
+    head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
     depends_on "cmake" => :build
     depends_on "lzlib"
