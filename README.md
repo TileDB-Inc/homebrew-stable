@@ -1,5 +1,7 @@
 # Install TileDB from brew
 
+[![Build Status](https://travis-ci.org/TileDB-Inc/homebrew-stable.svg?branch=master)](https://travis-ci.org/TileDB-Inc/homebrew-stable)
+
 Official [Homebrew](https://brew.sh/) packages for TileDB.
 
 ## Install TileDB (from stable tap)
