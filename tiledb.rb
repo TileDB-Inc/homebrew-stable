@@ -1,9 +1,9 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.io"
-    url "https://github.com/TileDB-Inc/TileDB/archive/1.0.0.tar.gz"
-    sha256 "35711e6155b9d3e08f2a25a388187eec4f175e5660a8b7a4e0cee68a7ea57f47"
-    version "1.0.0"
+    url "https://github.com/TileDB-Inc/TileDB/archive/1.1.0.tar.gz"
+    sha256 "9c1b8ee9edeed28a43c445ca861470d309b17d73e2e1a70c57424bc188bb2b33"
+    version "1.1.0"
 	
     depends_on "cmake" => :build
     depends_on "lzlib"
