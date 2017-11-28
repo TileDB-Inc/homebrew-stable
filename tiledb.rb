@@ -22,7 +22,9 @@ class Tiledb < Formula
 	# Build and install TileDB
 	mkdir "build"
 	cd "build" do
-	    args = ["--prefix=#{prefix}",]
+	    args = %W[
+	      --prefix=#{prefix}
+            ]
 	    args << "--enable-debug" if build.with? "debug"
 	    args << "--enable-hdfs" if build.with? "hdfs"
 	    args << "--enable-verbose" if build.with? "verbose"
