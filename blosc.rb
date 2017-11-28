@@ -13,7 +13,6 @@ class Blosc < Formula
     depends_on "snappy"
 
     def install
-	# Build and install TileDB
 	mkdir "build"
 	cd "build" do
 	    system "cmake", "..", 

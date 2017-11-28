@@ -1,0 +1,13 @@
+language: c
+
+os:
+  - osx
+
+before_install:
+  - brew update
+  
+script:
+  - brew install tiledb-inc/stable/blosc
+  - brew test blosc
+  - brew install tiledb-inc/stable/tiledb
+  - brew test tiledb
