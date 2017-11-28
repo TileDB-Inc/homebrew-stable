@@ -7,6 +7,10 @@ class Tiledb < Formula
 	
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
+    option "with-debug", "Enables building with debug information"
+    option "with-hdfs",  "Enables building with HDFS integration"
+    option "with-verbose", "Enables building with verbose status messages"
+
     depends_on "cmake" => :build
     depends_on "lzlib"
     depends_on "lz4"
@@ -18,8 +22,13 @@ class Tiledb < Formula
 	# Build and install TileDB
 	mkdir "build"
 	cd "build" do
-            system "../bootstrap", "--prefix=#{prefix}"
-	    system "make install"
+	    args = ["--prefix=#{prefix}",]
+	    args << "--enable-debug" if build.with? "debug"
+	    args << "--enable-hdfs" if build.with? "hdfs"
+	    args << "--enable-verbose" if build.with? "verbose"
+            system "../bootstrap", *args
+	    system "make"
+	    system "make", "install"
 	end
     end
 
