@@ -12,7 +12,7 @@ class AwsS3Sdk < Formula
 
   def install
     args = std_cmake_args
-    args << '-DBUILD_ONLY="s3;core;transfer;config"'
+    args << '-DBUILD_ONLY=s3;core;transfer;config'
     args << '-DSTATIC_LINKING=1' if build.with? "static"
     args << '-DNO_HTTP_CLIENT=1' if build.without? "http-client"
     mkdir "build" do
