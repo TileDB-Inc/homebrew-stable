@@ -1,4 +1,4 @@
-class AwsS3SDK < Formula
+class AwsS3Sdk < Formula
   desc "AWS SDK for C++, installs only S3 + dependencies"
   homepage "https://github.com/aws/aws-sdk-cpp"
   url "https://github.com/aws/aws-sdk-cpp/archive/1.3.18.tar.gz"
