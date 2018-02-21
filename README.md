@@ -10,7 +10,7 @@ Official [Homebrew](https://brew.sh/) packages for TileDB.
 brew install tiledb-inc/stable/tiledb
 ```
 
-Install the lastest development version of TileDB
+Install the lastest development version of TileDB (`dev` branch from https://github.com/TileDB-Inc/TileDB)
 
 ```
 brew install tiledb-inc/stable/tiledb --HEAD
@@ -19,12 +19,12 @@ brew install tiledb-inc/stable/tiledb --HEAD
 To see all build build options use `brew info tiledb`
 
 ```
-TileDB/homebrew-stable [master] » brew info tiledb
-tiledb-inc/stable/tiledb: stable 1.1.0, HEAD
+~ » brew info tiledb
+tiledb-inc/stable/tiledb: stable 1.2.0, HEAD
 Storage management library for sparse and dense array data
 http://tiledb.io
-/usr/local/Cellar/tiledb/HEAD-4134529 (8 files, 29MB) *
-  Built from source on 2017-11-28 at 12:51:29 with: --with-debug --with-verbose
+/usr/local/Cellar/tiledb/1.2.0 (37 files, 4.8MB) *
+  Built from source on 2018-02-20 at 18:32:15
 From: https://github.com/tiledb-inc/homebrew-stable/blob/master/tiledb.rb
 ==> Dependencies
 Build: cmake ✔
@@ -34,6 +34,10 @@ Required: lzlib ✔, lz4 ✔, bzip2 ✔, zstd ✔, blosc ✔
 	Enables building with debug information
 --with-hdfs
 	Enables building with HDFS integration
+--with-s3
+	Enables building with S3 object store integration
+--with-verbose
+	Enables building with verbose status messages
 --HEAD
 	Install HEAD version
 ```
