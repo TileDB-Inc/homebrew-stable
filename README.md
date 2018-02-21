@@ -50,7 +50,8 @@ brew test tiledb
 
 ## Upgrade TileDB (to a new version)
 
-If tiledb version was installed with `--HEAD` flag, to get the latest `dev` commit first unintall and intstall again with `--HEAD`
+If tiledb version was installed with `--HEAD` flag, to get the latest `dev` commit first `brew unintsall tiledb` and intstall again with `--HEAD` flag. 
+
 ```
 brew upgrade tiledb
 ```
