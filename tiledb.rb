@@ -43,7 +43,7 @@ class Tiledb < Formula
 
     test do
         (testpath/"test_tiledb.cpp").write <<~EOS
-            #include "tiledb.h"
+            #include "tiledb/tiledb.h"
 	    #include "assert.h"
 	    int main() {
 	        int major = 0;
