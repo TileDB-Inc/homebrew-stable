@@ -7,7 +7,9 @@ before_install:
   - brew update
   
 script:
-  - brew install tiledb-inc/stable/blosc
+  - brew install ./blosc.rb
   - brew test blosc
-  - brew install tiledb-inc/stable/tiledb
+  - brew install ./aws-s3-sdk.rb
+  - brew test aws-s3-sdk
+  - brew install ./tiledb.rb --with-s3
   - brew test tiledb
