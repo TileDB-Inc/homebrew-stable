@@ -1,8 +1,8 @@
 class AwsS3Sdk < Formula
   desc "AWS SDK for C++, installs only S3 + dependencies"
   homepage "https://github.com/aws/aws-sdk-cpp"
-  url "https://github.com/aws/aws-sdk-cpp/archive/1.3.18.tar.gz"
-  sha256 "f1d51eadb20c8e745115e882068cc9ba11b4f55612c4001da957743c680889b3"
+  url "https://github.com/aws/aws-sdk-cpp/archive/1.4.25.tar.gz"
+  sha256 "5f03e973bd85bbd626d04d0bef87ee11166ca65e889961b2e2396d40065379cc"
   head "https://github.com/aws/aws-sdk-cpp.git"
 
   option "with-static", "Build with static linking"
