@@ -11,5 +11,14 @@ script:
   - brew test blosc
   - brew install ./aws-s3-sdk.rb
   - brew test aws-s3-sdk
+
+  # test regular build
   - brew install ./tiledb.rb --with-s3
   - brew test tiledb
+  - brew uninstall tiledb
+
+  # test head build
+  - brew install ./tiledb.rb --HEAD
+  - brew test tiledb
+  - brew uninstall tiledb
+

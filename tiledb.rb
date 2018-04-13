@@ -36,8 +36,15 @@ class Tiledb < Formula
 	    args << "--enable-s3" if build.with? "s3"
 
             system "../bootstrap", *args
-	    system "make"
-	    system "make", "install"
+
+	    if build.head?
+                system "make"
+		system "make", "-C", "tiledb"
+		system "make", "-C", "tiledb", "install"
+	    else
+                system "make"
+		system "make", "install"
+	    end
 	end
     end
 
