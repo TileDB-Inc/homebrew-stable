@@ -17,10 +17,14 @@ class Tiledb < Formula
     depends_on "lz4"
     depends_on "bzip2"
     depends_on "zstd"
-    depends_on "blosc"
+    depends_on "tiledb-inc/stable/blosc"
 
     if build.with? "s3"
-        depends_on "aws-s3-sdk"
+        depends_on "tiledb-inc/stable/aws-s3-sdk"
+    end
+
+    if build.head?
+        depends_on "tbb"
     end
 
     def install
