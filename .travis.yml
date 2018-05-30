@@ -5,7 +5,10 @@ os:
 
 before_install:
   - brew update
-  
+  # required for tbb dependency
+  - brew unlink python && brew install python2 || true
+  - brew link --overwrite python@2
+
 script:
   - brew install ./blosc.rb
   - brew test blosc
