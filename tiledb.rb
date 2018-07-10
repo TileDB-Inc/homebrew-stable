@@ -20,7 +20,7 @@ class Tiledb < Formula
     depends_on "tiledb-inc/stable/blosc"
 
     if build.with? "s3"
-        depends_on "tiledb-inc/stable/aws-s3-sdk"
+        depends_on "aws-sdk-cpp"
     end
 
     if build.head?

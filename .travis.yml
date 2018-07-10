@@ -12,8 +12,6 @@ before_install:
 script:
   - brew install ./blosc.rb
   - brew test blosc
-  - brew install ./aws-s3-sdk.rb
-  - brew test aws-s3-sdk
 
   # test regular build
   - brew install ./tiledb.rb --with-s3
