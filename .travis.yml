@@ -14,8 +14,8 @@ script:
   - brew test blosc
 
   # test regular build
-  - brew install ./tiledb.rb --with-s3
-  - brew test tiledb
+  - brew install ./tiledb.rb
+  - brew test ./tiledb.rb
   - brew uninstall tiledb
 
   # test head build

@@ -1,31 +1,24 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.io"
-    url "https://github.com/TileDB-Inc/TileDB/archive/1.2.2.tar.gz"
-    sha256 "4a2670612905a4aa8e77471baf399fb88e04c027b0479d1334264eef761748f5"
-    version "1.2.2"
+    url "https://github.com/TileDB-Inc/TileDB/archive/1.3.0.tar.gz"
+    sha256 "4ea80ddb051f01afb036a2074df84fab07a1b88015b4b8636a5db17fcf4cf0d0"
+    version "1.3.0"
 	
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
     option "with-debug", "Enables building with debug information"
     option "with-verbose", "Enables building with verbose status messages"
     option "with-hdfs",  "Enables building with HDFS integration"
-    option "with-s3",    "Enables building with S3 object store integration"
 
     depends_on "cmake" => :build
+    depends_on "aws-sdk-cpp"
+    depends_on "tbb"
     depends_on "lzlib"
     depends_on "lz4"
     depends_on "bzip2"
     depends_on "zstd"
     depends_on "tiledb-inc/stable/blosc"
-
-    if build.with? "s3"
-        depends_on "aws-sdk-cpp"
-    end
-
-    if build.head?
-        depends_on "tbb"
-    end
 
     def install
 	# Build and install TileDB
@@ -33,22 +26,17 @@ class Tiledb < Formula
 	cd "build" do
 	    args = %W[
 	      --prefix=#{prefix}
+              --enable-s3
             ]
 	    args << "--enable-debug" if build.with? "debug"
 	    args << "--enable-verbose" if build.with? "verbose"
 	    args << "--enable-hdfs" if build.with? "hdfs"
-	    args << "--enable-s3" if build.with? "s3"
 
             system "../bootstrap", *args
 
-	    if build.head?
-                system "make"
-		system "make", "-C", "tiledb"
-		system "make", "-C", "tiledb", "install"
-	    else
-                system "make"
-		system "make", "install"
-	    end
+	    system "make"
+	    system "make", "-C", "tiledb"
+	    system "make", "-C", "tiledb", "install"
 	end
     end
 
