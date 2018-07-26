@@ -20,12 +20,12 @@ To see all build build options use `brew info tiledb`
 
 ```
 ~ » brew info tiledb
-TileDB/homebrew-stable [release-1.3.0●] » brew info tiledb.rb
-tiledb: stable 1.3.0, HEAD
+TileDB/homebrew-stable [release-1.3.1●] » brew info tiledb.rb
+tiledb: stable 1.3.1, HEAD
 Storage management library for sparse and dense array data
 http://tiledb.io
-/usr/local/Cellar/tiledb/1.3.0 (37 files, 3.3MB) *
-  Built from source on 2018-07-10 at 15:38:27
+/usr/local/Cellar/tiledb/1.3.1 (37 files, 3.3MB) *
+  Built from source on 2018-07-26 at 15:38:27
 From: /Users/jacobbolewski/TileDB/homebrew-stable/tiledb.rb
 ==> Dependencies
 Build: cmake ✔
