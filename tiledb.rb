@@ -1,15 +1,14 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.io"
-    url "https://github.com/TileDB-Inc/TileDB/archive/1.3.1.tar.gz"
-    sha256 "f6a7ccebc1898581a9fa731e5ba9c5778e23277688be0daa8ad4ace0ced63043"
-    version "1.3.1"
+    url "https://github.com/TileDB-Inc/TileDB/archive/1.3.2.tar.gz"
+    sha256 "9e3aec499ebb086b79ed62ffc7373d20dd4fb1caf639dd1e11d3a591c04b7b92"
+    version "1.3.2"
 	
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
     option "with-debug", "Enables building with debug information"
     option "with-verbose", "Enables building with verbose status messages"
-    option "with-hdfs",  "Enables building with HDFS integration"
 
     depends_on "cmake" => :build
     depends_on "aws-sdk-cpp"
@@ -27,11 +26,11 @@ class Tiledb < Formula
 	    args = %W[
 	      --prefix=#{prefix}
               --enable-s3
+	      --enable-hdfs
+	      --disable-tests
             ]
 	    args << "--enable-debug" if build.with? "debug"
 	    args << "--enable-verbose" if build.with? "verbose"
-	    args << "--enable-hdfs" if build.with? "hdfs"
-
             system "../bootstrap", *args
 
 	    system "make"
