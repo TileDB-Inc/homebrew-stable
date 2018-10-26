@@ -1,9 +1,9 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.io"
-    url "https://github.com/TileDB-Inc/TileDB/archive/1.3.2.tar.gz"
-    sha256 "9e3aec499ebb086b79ed62ffc7373d20dd4fb1caf639dd1e11d3a591c04b7b92"
-    version "1.3.2"
+    url "https://github.com/TileDB-Inc/TileDB/archive/1.4.0.tar.gz"
+    sha256 "6258ef0f1ca76a31a0b71fa5451174007d5cff11b3b57e74dc72dcf5e2c9e8b5"
+    version "1.4.0"
 	
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
@@ -17,7 +17,6 @@ class Tiledb < Formula
     depends_on "lz4"
     depends_on "bzip2"
     depends_on "zstd"
-    depends_on "tiledb-inc/stable/blosc"
 
     def install
 	# Build and install TileDB

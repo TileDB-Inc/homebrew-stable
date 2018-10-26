@@ -21,22 +21,20 @@ brew install tiledb-inc/stable/tiledb --HEAD
 To see all build build options use `brew info tiledb`
 
 ```
-~ » brew info tiledb
-TileDB/homebrew-stable [release-1.3.2●] » brew info tiledb.rb
-tiledb: stable 1.3.2, HEAD
+TileDB/homebrew-stable [release-1.4.0●] » brew info tiledb
+
+tiledb: stable 1.4.0, HEAD
 Storage management library for sparse and dense array data
 http://tiledb.io
-/usr/local/Cellar/tiledb/1.3.2 (37 files, 3.3MB) *
-  Built from source on 2018-07-26 at 15:38:27
+/usr/local/Cellar/tiledb/1.4.0 (39 files, 4.0MB) *
+  Built from source on 2018-10-26 at 09:16:22
 From: /Users/jacobbolewski/TileDB/homebrew-stable/tiledb.rb
 ==> Dependencies
 Build: cmake ✔
-Required: aws-sdk-cpp ✔, tbb ✔, lzlib ✔, lz4 ✔, bzip2 ✔, zstd ✔, tiledb-inc/stable/blosc ✔
+Required: aws-sdk-cpp ✔, tbb ✔, lzlib ✔, lz4 ✔, bzip2 ✔, zstd ✔
 ==> Options
 --with-debug
 	Enables building with debug information
---with-hdfs
-	Enables building with HDFS integration
 --with-verbose
 	Enables building with verbose status messages
 --HEAD
