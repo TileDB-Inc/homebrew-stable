@@ -18,6 +18,10 @@ Install the lastest development version of TileDB (`dev` branch from https://git
 brew install tiledb-inc/stable/tiledb --HEAD
 ```
 
+To Install TileDB with AWS backend support use `--with-s3`.
+For HDFS support use `--with-hdfs`.
+
+
 To see all build build options use `brew info tiledb`
 
 ```
@@ -37,6 +41,10 @@ Required: aws-sdk-cpp ✔, tbb ✔, lzlib ✔, lz4 ✔, bzip2 ✔, zstd ✔
 	Enables building with debug information
 --with-verbose
 	Enables building with verbose status messages
+--with-s3
+        Enables building with S3 backend support
+--with-hdfs
+        Enables building with HDFS backend support
 --HEAD
 	Install HEAD version
 ```

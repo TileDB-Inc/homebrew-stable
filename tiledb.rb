@@ -9,6 +9,8 @@ class Tiledb < Formula
 
     option "with-debug", "Enables building with debug information"
     option "with-verbose", "Enables building with verbose status messages"
+    option "with-s3", "Enables building with S3 backend support"
+    option "with-hdfs", "Enables bulding with HDFS backend suport"
 
     depends_on "cmake" => :build
     depends_on "aws-sdk-cpp"
@@ -24,12 +26,13 @@ class Tiledb < Formula
 	cd "build" do
 	    args = %W[
 	      --prefix=#{prefix}
-              --enable-s3
-	      --enable-hdfs
 	      --disable-tests
             ]
 	    args << "--enable-debug" if build.with? "debug"
 	    args << "--enable-verbose" if build.with? "verbose"
+	    args << "--enable-s3" if build.with? "s3"
+	    args << "--enable-hdfs" if build.with? "hdfs"
+
             system "../bootstrap", *args
 
 	    system "make"
