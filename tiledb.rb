@@ -1,9 +1,9 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.io"
-    url "https://github.com/TileDB-Inc/TileDB/archive/1.4.1.tar.gz"
-    sha256 "a278ebef1acc6e329eb9816502dda6b3c8b35c4853745a222111626c251b2845"
-    version "1.4.1"
+    url "https://github.com/TileDB-Inc/TileDB/archive/1.4.2.tar.gz"
+    sha256 "10ac55dd764470884f642de817fc70c271006d53fdc404ed862079425eb66ebe"
+    version "1.4.2"
 	
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
@@ -11,7 +11,6 @@ class Tiledb < Formula
     option "with-verbose", "Enables building with verbose status messages"
 
     depends_on "cmake" => :build
-    depends_on "aws-sdk-cpp"
     depends_on "tbb"
     depends_on "lzlib"
     depends_on "lz4"

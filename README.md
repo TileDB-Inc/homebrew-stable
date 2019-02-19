@@ -6,7 +6,7 @@ Official [Homebrew](https://brew.sh/) packages for TileDB.
 
 ## Install TileDB (from stable tap)
 
-The latest stable verison of [TileDB v1.4.1](https://github.com/TileDB-Inc/TileDB/releases/tag/1.4.1)
+The latest stable verison of [TileDB v1.4.2](https://github.com/TileDB-Inc/TileDB/releases/tag/1.4.2)
 
 ```
 brew install tiledb-inc/stable/tiledb
