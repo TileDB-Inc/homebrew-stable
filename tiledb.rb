@@ -9,6 +9,7 @@ class Tiledb < Formula
 
     option "with-debug", "Enables building with debug information"
     option "with-verbose", "Enables building with verbose status messages"
+    option "with-serialization", "Enables the building with REST serialization support"
 
     depends_on "cmake" => :build
     depends_on "tbb"
@@ -29,6 +30,12 @@ class Tiledb < Formula
             ]
 	    args << "--enable-debug" if build.with? "debug"
 	    args << "--enable-verbose" if build.with? "verbose"
+
+	    # dev / HEAD specific options
+	    if build.head?
+	        args << "--enable-serialization" if build.with? "serialization"
+            end
+
             system "../bootstrap", *args
 
 	    system "make"

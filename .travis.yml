@@ -20,3 +20,8 @@ script:
   - brew test tiledb
   - brew uninstall tiledb
 
+  # test head build with serialization
+  - brew install ./tiledb.rb --HEAD --with-serialization
+  - brew test tiledb
+  - brew uninstall tiledb
+

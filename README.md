@@ -37,6 +37,8 @@ Required: aws-sdk-cpp ✔, tbb ✔, lzlib ✔, lz4 ✔, bzip2 ✔, zstd ✔
 	Enables building with debug information
 --with-verbose
 	Enables building with verbose status messages
+--with-serialization
+        Enables the building with REST serialization support
 --HEAD
 	Install HEAD version
 ```
