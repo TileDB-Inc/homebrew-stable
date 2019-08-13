@@ -1,9 +1,9 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.io"
-    url "https://github.com/TileDB-Inc/TileDB/archive/1.5.1.tar.gz"
-    sha256 "f31fc3a6d1511e88ead38b2ab9938e16a68fdca4e47ce41e3a068d60115a93d7"
-    version "1.5.1"
+    url "https://github.com/TileDB-Inc/TileDB/archive/1.6.1.tar.gz"
+    sha256 "80127f900cb74b5a629a86c703ababacb7b78a37e5fd89399193f5724afcde01"
+    version "1.6.1"
 	
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
@@ -30,11 +30,7 @@ class Tiledb < Formula
             ]
 	    args << "--enable-debug" if build.with? "debug"
 	    args << "--enable-verbose" if build.with? "verbose"
-
-	    # dev / HEAD specific options
-	    if build.head?
-	        args << "--enable-serialization" if build.with? "serialization"
-            end
+	    args << "--enable-serialization" if build.with? "serialization"
 
             system "../bootstrap", *args
 
