@@ -1,15 +1,15 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.io"
-    url "https://github.com/TileDB-Inc/TileDB/archive/1.6.1.tar.gz"
-    sha256 "80127f900cb74b5a629a86c703ababacb7b78a37e5fd89399193f5724afcde01"
-    version "1.6.1"
+    url "https://github.com/TileDB-Inc/TileDB/archive/1.6.3.tar.gz"
+    sha256 "12b70176822a04423093db741376d2bf0c3867b535e7dc4ee8dfa9a8444611fc"
+    version "1.6.3"
 	
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
     option "with-debug", "Enables building with debug information"
     option "with-verbose", "Enables building with verbose status messages"
-    option "with-serialization", "Enables the building with REST serialization support"
+    option "with-no-serialization", "Disables building with REST serialization support"
 
     depends_on "cmake" => :build
     depends_on "tbb"
@@ -30,7 +30,7 @@ class Tiledb < Formula
             ]
 	    args << "--enable-debug" if build.with? "debug"
 	    args << "--enable-verbose" if build.with? "verbose"
-	    args << "--enable-serialization" if build.with? "serialization"
+	    args << "--enable-serialization" unless build.with? "no-serialization"
 
             system "../bootstrap", *args
 
