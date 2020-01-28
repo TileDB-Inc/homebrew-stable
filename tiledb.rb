@@ -1,9 +1,9 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
-    homepage "http://tiledb.io"
-    url "https://github.com/TileDB-Inc/TileDB/archive/1.7.1.tar.gz"
-    sha256 "8cc6a178746f024791f9c2624b9b5627c4f2fad72ca0b8023877557a71d151b6"
-    version "1.7.1"
+    homepage "http://tiledb.com"
+    url "https://github.com/TileDB-Inc/TileDB/archive/1.7.4.tar.gz"
+    sha256 "a87638d804c0cdd24c131e46d9b78094298420fc878292ace27c7b775fb42382"
+    version "1.7.4"
 	
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
