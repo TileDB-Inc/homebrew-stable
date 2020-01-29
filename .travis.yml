@@ -5,9 +5,7 @@ os:
 
 before_install:
   - brew update
-  # required for tbb dependency
-  - brew unlink python && brew install python2 || true
-  - brew link --overwrite python@2
+  - brew unlink python@2
 
 script:
   # test regular build
