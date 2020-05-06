@@ -7,10 +7,6 @@ class Tiledb < Formula
 
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
-    option "with-debug", "Enables building with debug information"
-    option "with-verbose", "Enables building with verbose status messages"
-    option "with-no-serialization", "Disables building with REST serialization support"
-
     depends_on "cmake" => :build
     depends_on "tbb"
     depends_on "lzlib"
@@ -28,11 +24,8 @@ class Tiledb < Formula
 	      --enable-hdfs
 	      --disable-tests
             ]
-	    args << "--enable-debug" if build.with? "debug"
-	    args << "--enable-verbose" if build.with? "verbose"
-	    args << "--enable-serialization" unless build.with? "no-serialization"
 
-            system "../bootstrap", *args
+	    system "../bootstrap", *args
 
 	    system "make"
 	    system "make", "-C", "tiledb"
