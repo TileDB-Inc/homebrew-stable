@@ -6,7 +6,7 @@ Official [Homebrew](https://brew.sh/) packages for TileDB.
 
 ## Install TileDB (from stable tap)
 
-The latest stable verison of [TileDB v2.0.0](https://github.com/TileDB-Inc/TileDB/releases/tag/2.0.0)
+The latest stable verison of [TileDB v2.0.1](https://github.com/TileDB-Inc/TileDB/releases/tag/2.0.1)
 
 ```
 brew install tiledb-inc/stable/tiledb
@@ -21,12 +21,12 @@ brew install tiledb-inc/stable/tiledb --HEAD
 To see all build build options use `brew info tiledb`
 
 ```
-TileDB/homebrew-stable [release-2.0.0●] » brew info tiledb
+TileDB/homebrew-stable [release-2.0.1●] » brew info tiledb
 
-tiledb: stable 2.0.0, HEAD
+tiledb: stable 2.0.1, HEAD
 Storage management library for sparse and dense array data
 http://tiledb.io
-/usr/local/Cellar/tiledb/2.0.0 (39 files, 4.0MB) *
+/usr/local/Cellar/tiledb/2.0.1 (36 files, 7.3MB) *
   Built from source on 2018-10-26 at 09:16:22
 From: /Users/jacobbolewski/TileDB/homebrew-stable/tiledb.rb
 ==> Dependencies
