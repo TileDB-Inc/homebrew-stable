@@ -1,9 +1,9 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.com"
-    url "https://github.com/TileDB-Inc/TileDB/archive/2.0.1.tar.gz"
-    sha256 "7260f8a7590d2fe8fd69d5008bf1514cd75d52425ae5a00a769b5c8d48aa18ba"
-    version "2.0.1"
+    url "https://github.com/TileDB-Inc/TileDB/archive/2.0.3.tar.gz"
+    sha256 "639a5df207bde4317dcccb0496f1fd217dffd14cff8c1c2f90e0735751499594"
+    version "2.0.3"
 
     head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
 
@@ -21,14 +21,17 @@ class Tiledb < Formula
 	    args = %W[
 	      --prefix=#{prefix}
               --enable-s3
+              --enable-azure
+              --enable-gcs
 	      --enable-hdfs
+	      --enable-serialization
 	      --disable-tests
             ]
 
 	    system "../bootstrap", *args
 
-	    system "make"
-	    system "make", "-C", "tiledb"
+	    system "make", "-j4"
+	    system "make", "-C", "tiledb", "-j4"
 	    system "make", "-C", "tiledb", "install"
 	end
     end

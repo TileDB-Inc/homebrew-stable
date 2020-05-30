@@ -9,11 +9,11 @@ before_install:
 
 script:
   # test regular build
-  - brew install ./tiledb.rb
+  - travis_wait 45 brew install ./tiledb.rb
   - brew test ./tiledb.rb
   - brew uninstall tiledb
 
   # test head build
-  - brew install ./tiledb.rb --HEAD
+  - travis_wait 45 brew install ./tiledb.rb --HEAD
   - brew test tiledb
   - brew uninstall tiledb
