@@ -1,38 +1,13 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.com"
-    url "https://github.com/TileDB-Inc/TileDB/archive/2.1.2.tar.gz"
-    sha256 "bc19281ef4a4629c3ca4d69007c0296ebcfd02579fed424de3b7d38391a848a8"
+    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.1.2/tiledb-macos-2.1.2-4d3be6b-full.tar.gz"
+    sha256 "bded21c297388338cfd833124af4d46ec2b1e2520305208d74a1e4331251d5d7"
     version "2.1.2"
-
-    head "https://github.com/TileDB-Inc/TileDB.git", :branch => "dev"
-
-    depends_on "cmake" => :build
-    depends_on "lzlib"
-    depends_on "lz4"
-    depends_on "bzip2"
-    depends_on "zstd"
 
     def install
         # Build and install TileDB
-        mkdir "build"
-        cd "build" do
-            args = %W[
-              --prefix=#{prefix}
-              --enable-s3
-              --enable-azure
-              --enable-gcs
-              --enable-hdfs
-              --enable-serialization
-              --disable-tests
-            ]
-
-            system "../bootstrap", *args
-
-            system "make", "-j4"
-            system "make", "-j4", "-C", "tiledb"
-            system "make", "-j4", "-C", "tiledb", "install"
-        end
+        prefix.install Dir["*"]
     end
 
     test do
