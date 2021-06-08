@@ -3,9 +3,10 @@ language: c
 os:
   - osx
 
+osx_image: xcode12.5
+
 before_install:
   - brew update
-  - brew unlink python@2
 
 script:
   # test regular build
