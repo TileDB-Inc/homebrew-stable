@@ -1,9 +1,9 @@
 class Tiledb < Formula
     desc "Storage management library for sparse and dense array data"
     homepage "http://tiledb.com"
-    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.4.0/tiledb-macos-x86_64-release-2.4-baf64e1.tar.gz"
+    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.5.0/tiledb-macos-x86_64-2.5.0-d11292d.tar.gz"
     sha256 ""
-    version "2.4.0"
+    version "2.5.0"
 
     def install
         # Build and install TileDB
