@@ -56,3 +56,10 @@ brew upgrade tiledb
 ```
 brew uninstall tiledb
 ```
+
+## Install from local source tree
+
+```
+cd </path/to/homebrew-stable>
+brew install --build-from-source ./tiledb.rb
+```
