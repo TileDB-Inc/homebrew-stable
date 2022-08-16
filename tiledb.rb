@@ -1,17 +1,22 @@
-# typed: false
-# frozen_string_literal: true
-
-# Storage management library for sparse and dense array data | github.com/TileDB-Inc
 class Tiledb < Formula
   desc "Storage management library for sparse and dense array data"
-  homepage "http://tiledb.com"
-  url "https://github.com/TileDB-Inc/TileDB/releases/download/2.10.0/tiledb-macos-x86_64-2.10.0-0b54e51.tar.gz"
-  version "2.10.0"
-  sha256 "57dce8fdc8e0fa1bf3b8e48366e529ddbf4bd948459d0893d068a680f1ab8d3f"
+  homepage "https://tiledb.com"
+  url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.11.0.tar.gz"
+  sha256 "98f1362a1394e6302c35ea388e480ae591031f49d5ee72087ac346191b239958"
+  license "MIT"
+  depends_on "cmake" => :build
+  depends_on "lz4"
+  depends_on "zstd"
+  depends_on "catch2"
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
-    # Build and install TileDB
-    prefix.install Dir["*"]
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+      system "make"
+      system "make", "install-tiledb"
+    end
   end
 
   test do
