@@ -4,19 +4,24 @@ class Tiledb < Formula
   url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.11.0.tar.gz"
   sha256 "98f1362a1394e6302c35ea388e480ae591031f49d5ee72087ac346191b239958"
   license "MIT"
-  depends_on "cmake" => :build
-  depends_on "lz4"
-  depends_on "zstd"
-  depends_on "catch2"
-  uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.11.0/tiledb-macos-arm64-2.11.0-34e5dbc.tar.gz"
+    sha256 "fe7266839a39dc55560a7b0560d0ab286e67407b2549ce373adf6bd31cf6f6c3"
+  end
+
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.11.0/tiledb-macos-x86_64-2.11.0-34e5dbc.tar.gz"
+    sha256 "b62c27dee8599fb2756f75463aa08f6b2d1bbb5346db7df06c9f5785b8ae2df0"
+  end
+
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.11.0/tiledb-linux-x86_64-2.11.0-34e5dbc.tar.gz"
+    sha256 "f4179de2d6df1eea658e0f9f68c4030b50ba85c0fcd878da8590a8bef0d1c1f3"
+  end
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
-      system "make"
-      system "make", "install-tiledb"
-    end
+    prefix.install Dir["*"]
   end
 
   test do
