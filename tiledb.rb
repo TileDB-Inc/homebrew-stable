@@ -1,23 +1,23 @@
 class Tiledb < Formula
   desc "Storage management library for sparse and dense array data"
   homepage "https://tiledb.com"
-  url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.11.3.tar.gz"
-  sha256 "30375e953ca14584008cde4d722d0b084e862304a51282bc3ce5688e122af82f"
+  url "https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.12.0.tar.gz"
+  sha256 "212e80769199c13956e1eb31b56a510fb46ee56310234481a6aaf4a07acf2efb"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.11.3/tiledb-macos-arm64-2.11.3-a55a910.tar.gz"
-    sha256 "aa665070e16abcad30bb34069064e7795bdda7df3bfe8087500f7295be083969"
+    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.12.0/tiledb-macos-arm64-2.12.0-ac8a0df.tar.gz"
+    sha256 "15fc3efc1f770680ca7f3a2e67f15b5a37a86cdcf2414eb8629d2124e6c70f54"
   end
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.11.3/tiledb-macos-x86_64-2.11.3-a55a910.tar.gz"
-    sha256 "8eb10a7ba0858a666561a9d546f35b36b6792ed6f1d74812d74a39ec0c6dd8e0"
+    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.12.0/tiledb-macos-x86_64-2.12.0-ac8a0df.tar.gz"
+    sha256 "0e77650ab86cb65cd04f9f6fcb6d8bfc600fd59c03805c6b739a10e7b05e5821"
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.11.3/tiledb-linux-x86_64-2.11.3-a55a910.tar.gz"
-    sha256 "84f5cfdab9b105c29dba74486ddd632a95cc975a884857f5615436c991a490e6"
+    url "https://github.com/TileDB-Inc/TileDB/releases/download/2.12.0/tiledb-linux-x86_64-2.12.0-ac8a0df.tar.gz"
+    sha256 "e27a51db6fa19b753cda3c9fca16950fa39126d48687c8f3df23091755df5ea0"
   end
 
   def install
