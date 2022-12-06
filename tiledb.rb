@@ -17,7 +17,7 @@ class Tiledb < Formula
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/TileDB-Inc/TileDB/releases/download/2.13.0/tiledb-linux-x86_64-2.13.0-db00e70.tar.gz"
-    sha256 ""
+    sha256 "324aecb43cbc16ae7bc0cded1b90e632c36d28b26e45f990922516e5af73428c"
   end
 
   def install
