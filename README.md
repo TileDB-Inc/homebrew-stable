@@ -1,8 +1,7 @@
 # Install TileDB from brew
 
-[![Build Status](https://travis-ci.org/TileDB-Inc/homebrew-stable.svg?branch=master)](https://travis-ci.org/TileDB-Inc/homebrew-stable)
-
-Official [Homebrew](https://brew.sh/) packages for TileDB.
+**Deprecation notice: this repository will be archived after TileDB 2.15. Please use the macOS release
+  binaries available from https://github.com/TileDB-Inc/TileDB/releases instead.**
 
 ## Install TileDB (from stable tap)
 
